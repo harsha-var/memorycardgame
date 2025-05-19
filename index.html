@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="exit-game" class="exit-btn exit-btn-left">Exit Game</button>
+    <button id="mute-btn" class="mute-btn" aria-label="Mute/Unmute Sound">🔊</button>
+    <div id="login-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;z-index:1000;">
+        <form id="login-form" style="background:#222;padding:32px 24px;border-radius:12px;box-shadow:0 4px 32px #000;text-align:center;">
+            <h2 style="color:#fff;margin-bottom:16px;">Enter the Game</h2>
+            <input type="text" id="player-name" placeholder="Your Name" required style="padding:8px 12px;margin-bottom:12px;width:80%;border-radius:6px;border:none;font-size:1rem;" autocomplete="off"><br>
+            <label for="player-age" style="color:#fff;">Your Age: <span id="age-value">12</span></label><br>
+            <input type="range" id="player-age" min="1" max="100" value="12" style="width:80%;margin-bottom:16px;"><br>
+            <button type="submit" style="padding:8px 24px;border:none;border-radius:6px;background:#ff5e62;color:#fff;font-family:'Press Start 2P',Arial,sans-serif;cursor:pointer;font-size:1rem;">Enter Game</button>
+            <div id="login-error" style="color:#ffb347;margin-top:10px;display:none;">Please enter a valid name and age (age ≥ 12).</div>
+        </form>
+    </div>
+    <h1>Memory Card Matching Game</h1>
+    <div class="main-content">
+        <div class="player-card" id="player-card" style="display:none;">
+            <h3>Player</h3>
+            <div id="player-info">
+                <p><strong>Name:</strong> <span id="display-player-name"></span></p>
+            </div>
+        </div>
+        <div class="game-container">
+            <div id="game-board"></div>
+        </div>
+        <div class="scoreboard-banner" id="scoreboard-banner">
+            <div class="scoreboard-header">
+                <span>🏆 High Scores</span>
+            </div>
+            <ol id="score-list">
+                <!-- Scores will be injected here by JS -->
+            </ol>
+        </div>
+    </div>
+    <audio id="audio-flip" src="sounds/flip.mp3"></audio>
+    <audio id="audio-bgm" src="sounds/bgm.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
