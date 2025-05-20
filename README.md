@@ -8,3 +8,8 @@
 
 
 3) If there is anychange done in repository it auto updates in deployment. 
+
+## 🛠️ Tech Stack  
+- **Frontend:** HTML, CSS, JavaScript  
+- **CI/CD:** Jenkins, GitHub Actions  
+- **Cloud Deployment:** AWS S3  
